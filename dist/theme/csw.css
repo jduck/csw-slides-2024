@@ -408,6 +408,12 @@ body {
   filter: drop-shadow(5px 5px 5px black);
 }
 
+.reveal .ninja {
+  height: 200px;
+  text-align: center;
+  padding: 0px 0px 40px 0px;
+}
+
 .reveal .content {
   text-align: left;
 }
