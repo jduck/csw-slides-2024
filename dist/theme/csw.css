@@ -414,6 +414,22 @@ body {
   padding: 0px 0px 40px 0px;
 }
 
+.reveal .filc {
+  position: absolute;
+  top: 270px;
+  left: 50%;
+  text-align: right;
+  padding: 0px 0px 40px 0px;
+}
+
+.reveal .atlcve {
+  height: 300px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 64pt;
+  font-weight: bold;
+}
+
 .reveal .content {
   text-align: left;
 }

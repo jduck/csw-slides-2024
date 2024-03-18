@@ -116,6 +116,23 @@ section.has-dark-background {
   padding: 0px 0px 40px 0px;
 }
 
+// chisnall on fil-c image
+.reveal .filc {
+  position: absolute;
+  top: 270px;
+  left: 50%;
+  text-align: right;
+  padding: 0px 0px 40px 0px;
+}
+
+// CVE for ATL style
+.reveal .atlcve {
+  height: 300px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 64pt;
+  font-weight: bold;
+}
 
 // content slide
 .reveal .content { text-align: left; }
