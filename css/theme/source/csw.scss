@@ -34,7 +34,7 @@ $linkColor: #0088cc;
 $linkColorHover: lighten( $linkColor, 15% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
 
-$heading1Size: 2.25em;
+$heading1Size: 1.75em;
 $heading2Size: 1.5em;
 $heading3Size: 1.3em;
 $heading4Size: 1.0em;
@@ -74,7 +74,10 @@ section.has-dark-background {
 
 // title slide magic
 .reveal .preso-title { height: 500px; }
-.reveal .preso-title h1 { text-align: center; }
+.reveal .preso-title h1 {
+  font-size: 2.5em;
+  text-align: center;
+}
 .reveal .preso-title-line {
   height: 2px;
   background: $mainColor;
@@ -248,7 +251,7 @@ section.has-dark-background {
 // footnotes
 .reveal .footnote {
   position: absolute;
-  margin-top: 500px;
+  margin-top: 460px;
   font-size: 0.60em;
 }
 @media print {

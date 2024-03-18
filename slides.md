@@ -11,14 +11,11 @@
 # About me
 
 - Vulnerability research and exploit development career
-
 - Most recently Sr. Security Engineer at Amazon Lab126
-
 - Bootstrapping a security startup
-
 - Developing strategic Rust implementations
 
-- Previously:
+Previously:
 <div class="about-logos">
  <img height=120px src="/lib/img/amsec-trans-w.png" />
  <img height=120px src="/lib/img/sflogo.png" />
@@ -152,10 +149,9 @@ So one extra byte in a header file caused such a huge fallout?
 # Undefined Behavior
 
 <div class="footnote">
-1. <a href="https://en.wikipedia.org/wiki/Undefined_behavior">Wikipedia on Undefined Behavior</a><br />
-2. <a href="https://gist.github.com/Earnestly/7c903f481ff9d29a3dd1">C99 List of Undefined Behavior</a><br />
-3. <a href="https://www.youtube.com/watch?v=k9N8OrhrSZw">What every programmer should know and fear</a><br />
-4. <a href="https://www.safetyresearch.net/toyota-unintended-acceleration-and-the-big-bowl-of-spaghetti-code/">Toyota Unintended Acceleration</a>
+1. <a href="https://gist.github.com/Earnestly/7c903f481ff9d29a3dd1">C99 List of Undefined Behavior</a><br />
+2. <a href="https://www.youtube.com/watch?v=k9N8OrhrSZw">What every programmer should know and fear</a><br />
+3. <a href="https://www.safetyresearch.net/toyota-unintended-acceleration-and-the-big-bowl-of-spaghetti-code/">Toyota Unintended Acceleration</a>
 </div>
 
 - Intentional ambiguity in the C language specification
@@ -280,7 +276,7 @@ Bugs will still happen
 # Recent Events
 <div class="ctitle-line"></div>
 
-## What happend in the past few years?
+## What's going on?
 
 
 ## All About Software Safety
@@ -307,8 +303,7 @@ Check out Saar Amar (Dec 2022) and David Teller (Feb 2023) writings.
 <div class="footnote">
 1. <a href="https://media.defense.gov/2022/Nov/10/2003112742/-1/-1/0/CSI_SOFTWARE_MEMORY_SAFETY.PDF">NSA Paper on Memory Safety, Nov 2022</a><br />
 2. <a href="https://www.whitehouse.gov/wp-content/uploads/2023/03/National-Cybersecurity-Strategy-2023.pdf">National Cybersecurity Strategy</a> (<a href="https://www.regulations.gov/docket/ONCD-2023-0002/comments">107 RFI comments</a>)<br />
-3. <a href="https://www.cisa.gov/sites/default/files/2023-10/SecureByDesign_1025_508c.pdf">Secure By Design</a> (<a href="https://www.regulations.gov/docket/CISA-2023-0027/comments">83 RFI comments</a>)<br/>
-4. <a href="https://www.whitehouse.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf">Back to the Building Blocks</a>
+3. <a href="https://www.cisa.gov/sites/default/files/2023-10/SecureByDesign_1025_508c.pdf">Secure By Design</a> (<a href="https://www.regulations.gov/docket/CISA-2023-0027/comments">83 RFI comments</a>)
 </div>
 
 Governments turning Memory Safety into a MEME!
@@ -318,7 +313,7 @@ Several papers and Federal Regsiter RFIs (and response comments on regulations.g
 * 2022 - NSA Paper on Memory Safety
 * 2023 - National Cybersecurity Strategy
 * 2024 - Secure by Design (CISA + 13 other countries)
-* 2024 - Back to the Building Blocks (ONCD)
+* 2024 - Back to the Building Blocks (ONCD) [[LINK](https://www.whitehouse.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf)]
   * Results from 2023 CFI
 
 

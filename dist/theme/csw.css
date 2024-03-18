@@ -61,7 +61,7 @@ body {
 }
 
 .reveal h1 {
-  font-size: 2.25em;
+  font-size: 1.75em;
 }
 
 .reveal h2 {
@@ -370,6 +370,7 @@ body {
 }
 
 .reveal .preso-title h1 {
+  font-size: 2.5em;
   text-align: center;
 }
 
@@ -559,7 +560,7 @@ body {
 
 .reveal .footnote {
   position: absolute;
-  margin-top: 500px;
+  margin-top: 460px;
   font-size: 0.6em;
 }
 
