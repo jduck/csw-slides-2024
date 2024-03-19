@@ -1,14 +1,15 @@
-# Agenda
+## Agenda
 
 - Introduction
 - History Lesson
 - Where we are
 - Recent Events
 - Call to Action
+- Conclusions
 - Q & A
 
 
-# About me
+## About me
 
 - Vulnerability research and exploit development career
 - Most recently Sr. Security Engineer at Amazon Lab126
@@ -34,9 +35,8 @@ Previously:
 
 ## Disclaimer
 
-I feel vastly underqualified to cover this topic. This presentation is
-my best effort to show the state of the art and share my experiences,
-thoughts, and opinions.
+This presentation is my best effort to show the state of the art and share my
+experiences, thoughts, and opinions.
 
 Please take time to think about the content and formulate your own ideas/response.
 
@@ -72,7 +72,7 @@ Trust is our goal, and guarantees set a baseline.
 ## How did we get here?
 
 
-# My Journey
+## My Journey
 
 * Mischievious since birth
 * Programming since age 11
@@ -81,7 +81,7 @@ Trust is our goal, and guarantees set a baseline.
 * Studied Math + CS in university
 
 
-# My Journey
+## My Journey
 
 <div class="footnote">
 1. <a href="https://packetstormsecurity.com/files/25349/formatstring-1.2.tar.gz.html">Exploiting Format String Vulnerabilities by scut</a>
@@ -106,7 +106,7 @@ As I learned more, I quickly lost hope in shipping code that others relied on.
 </aside>
 
 
-# Microsoft's Example
+## Microsoft's Example
 
 <div class="footnote">
 1. <a href="https://www.nbcnews.com/id/wbna4641234">Bill Gates sends security memo to customers</a><br />
@@ -146,7 +146,7 @@ So one extra byte in a header file caused such a huge fallout?
 </aside>
 
 
-# Undefined Behavior
+## Undefined Behavior
 
 <div class="footnote">
 1. <a href="https://gist.github.com/Earnestly/7c903f481ff9d29a3dd1">C99 List of Undefined Behavior</a><br />
@@ -229,6 +229,10 @@ Open your minds and seek to learn!
 
 I bet you can think of other things too!
 
+<aside class="notes">
+- Who tested what?
+</aside>
+
 
 ## Government Fails
 
@@ -249,26 +253,17 @@ This takes talented resources away from the pool of potential security industry 
 
 - Market incentives undermine security
   - Good, Fast, Cheap -- Pick two.
-- No SDLC?
-  - SDLC was born 20 years ago.
+- No Secure SDLC?
+  - Microsoft SDL was born 20 years ago.
 - C and C++ widely used, but error prone
 - Ignore compiler warnings
 - Ignore static analysis tool output
 - Testing severely lacking
   - Fuzz much??
 
-
-## All the safety is not enough
-
-Bugs will still happen
-
-- Command injection, SQL injection, XSS, all the injections
-- Logic errors
-- Authentication missing or poorly implemented
-- Crypto fails
-- ...and so on
-
-**But memory safety issues are reportedly 70% of the problems that Microsoft and Google encounter and fix.**
+<aside class="notes">
+Is releasing a poor quality product really in your company's best interest?
+</aside>
 
 ---
 
@@ -298,7 +293,7 @@ Many things to think about:
 Check out Saar Amar (Dec 2022) and David Teller (Feb 2023) writings.
 
 
-# Government Activism
+## Government Activism
 
 <div class="footnote">
 1. <a href="https://media.defense.gov/2022/Nov/10/2003112742/-1/-1/0/CSI_SOFTWARE_MEMORY_SAFETY.PDF">NSA Paper on Memory Safety, Nov 2022</a><br />
@@ -317,7 +312,7 @@ Several papers and Federal Regsiter RFIs (and response comments on regulations.g
   * Results from 2023 CFI
 
 
-# Industry Activity
+## Industry Activity
 
 Even before the recent federal push, several vendors are leading by example.
 
@@ -329,7 +324,7 @@ Even before the recent federal push, several vendors are leading by example.
 Also, many startups are making smart choices.
 
 
-# Hardware: MTE
+## Hardware: MTE
 
 <div class="footnote">
 1. <a href="https://source.android.com/docs/security/test/memory-safety/arm-mte">Arm Memory Tagging Extension AOSP Docs</a><br />
@@ -347,7 +342,7 @@ Present in Google Pixel 8 and 8 Pro and hopefully others
 - Exposes poor software quality!
 
 
-# Hardware: CHERI
+## Hardware: CHERI
 
 <div class="footnote">
 1. <a href="https://www.cl.cam.ac.uk/research/security/ctsrd/cheri/">https://www.cl.cam.ac.uk/research/security/ctsrd/cheri/</a><br />
@@ -368,7 +363,7 @@ CHERI represents a paradigm shift in computing
 </aside>
 
 
-# OpenSSF
+## OpenSSF
 
 <div class="footnote">1. <a href="https://openssf.org/">https://openssf.org/</a></div>
 
@@ -380,7 +375,7 @@ Funded by the Linux Foundation
 Many efforts: Training, Scorecard, Alpha-Omega, Memory Safety WG, etc
 
 
-# C++ Community
+## C++ Community
 
 <div class="footnote">
 1. <a href="https://github.com/bjarneStroustrup/profiles">Bjarne's Profiles repo on GitHub</a><br />
@@ -399,7 +394,7 @@ Maybe C++26?
   - Engage with him on X/Twitter
 
 
-# Defining Undefined Behavior
+## Defining Undefined Behavior
 
 <div class="footnote">
 1. <a href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1705r1.html">P1705R1: Enumerating Core Undefined Behavior in C++</a><br />
@@ -415,7 +410,7 @@ I emailed him with encouragement, but no response :-/
 IDEA: Maybe we should attempt to define the behavior based on empirical observations?
 
 
-# Other Interesting Stuff - Fil-C
+## Other Interesting Stuff - Fil-C
 
 <div class="footnote">
 1. <a href="https://github.com/pizlonator/llvm-project-deluge">Fil-C on GitHub</a>
@@ -442,71 +437,16 @@ by Filip Jerzy Pizlo ([@filpizlo](https://twitter.com/filpizlo))
 
 ## Hot Buzzwords
 
-Shift left
- - Move testing earlier in the process
- - Developers lose context over time -- tighter feedback loops are more efficient
-
-DevSecOps
- - Core idea is integrating security processes within development pipelines
- - To block or not to block? That is the question
-
-
-## Milestones in a SDLC
-
-1. Inception of the idea to develop something
-2. Creation of a design
-3. Threat modeling / identifying mitigations to threats
-- Understand the attack surface and classify risk with hypothetical CVSS
-- This is a good time to design counter measures and feature flags
-4. Implementation
-5. Testing
-6. Verification
-
-And the cycle continues... Perhaps need a graphic?
+You should know what these mean:
+- Shift left
+  - Move testing earlier in the process
+  - Developers lose context over time -- tighter feedback loops are more efficient
+- DevSecOps
+  - Integrate security processes into development pipelines
+  - To block or not to block? That is the question
 
 
-## Other beneficial practices
-
-1. Creating guidelines / coding standards and adhering to them.
-2. Well executed code reviews by qualified colleages
-3. Periodically revisiting the software to assess environmental drift
-4. Inviting open participation to review - open source / bug bounties / etc
-
-
-## Programming Language Choice
-
-Often viewed as a religious discussion.
-
-- you can create safe and secure code in any language, but the amount of effort it will require differs
-  - C
-  - C++
-  - Rust
-  - Go
-  - Python
-  - other?
-
-
-# Thoughts on C
-
-- A language for computer wizards
-  - Literal minefield of inconsistency
-  - Immense burden put on the developer
-- Little to no improvements for a long, long time
-  - Why not improve string APIs??
-
-
-# Thoughts on C++
-
-- Many improvements but often with new footguns
-  - Example: move semantics in C++11
-- Backward compatibility is a primary goal
-  - Leads to "C/C++" code
-  - Guarantees require breaking changes
-- Adoption rate is *VERY* slow
-  - Most C++ teams use C++17 at best
-
-
-# About CWE
+## About CWE
 
 <div class="footnote">
 1. <a href="https://cwe.mitre.org/about/index.html">CWE About Page - MITRE</a><br />
@@ -522,104 +462,235 @@ Common Weaknesses Enumeration
 - See also Top 25 etc
 
 
-## Good, Fast, Cheap
+## Implement SSDLC
 
-Not enough people?
-  - Take an apprentice!
- - lack of rigor in security testing.
-   - what was tested? who tested it? what did they find?
-   - what WASNT tested?
+<div class="footnote">
+1. <a href="https://codesigningstore.com/secure-software-development-life-cycle-sdlc">Secure SDLC by CodeSigningStore (digicert)</a><br />
+2. <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf">NIST Secure Software Development Framework</a>
+</div>
 
-Triangle?
-Which one?
-Is a balance really unobtanium?
-Is releasing a poor quality product really in your company's best interest?
+<div class="about-logos">
+Secure Software Development Life Cycle
+ <img src="/lib/img/ssdlc-process.png"><br />
+<div style="font-size: 18pt">Image provided as an example only</div>
+</div>
+
+
+## Design Phase
+
+**Early choices have long-lasting impact.**
+- On security baselines
+- On maintenance burden
+
+Every feature is a potential attack surface.
+- Design with response in mind
+
+**Programming Language choices inherit technical debt**
+
+
+## Programming Language Choice
+
+Often viewed as a religious topic with many factors to consider. Some (subjective) properties:
+<div class="pltab">
+
+| lang    | perf.  | get compiled  | weaknesses | debug |
+|---------|--------|---------------|------------|-------|
+| C       | high   | medium        | high       | high  |
+| C++     | high   | medium        | high       | high  |
+| Rust    | high   | high          | low        | low   |
+| Go      | high   | medium        | low        | low   |
+| Python  | low    | n/a           | low        | low   |
+
+</div>
+I use and recommend modern langauges
+
+<aside class="notes">
+- You can create safe and secure code in any language, but the amount of effort required differs.<br />
+- Older languages require a dev perfectly manage memory, lifetime, and so on.<br />
+- Older languages have a tremendous number of potential foot guns.<br />
+</aside>
+
+
+## Thoughts on C
+
+- A language for computer wizards
+  - Literal minefield of inconsistency
+  - Immense burden put on the developer
+- Little to no improvements for a long, long time
+  - Why not improve string APIs??
+
+
+## Thoughts on C++
+
+- Many improvements but often with new footguns
+  - Example: move semantics in C++11
+- Backward compatibility is a primary goal
+  - Leads to "C/C++" code
+  - Guarantees require breaking changes
+- Adoption rate is *VERY* slow
+  - Most C++ teams use C++17 at best
+
+
+## Thoughts on Rust/Go
+
+Ideal languages for the modern world.
+- Benefit from decades of learning about software construction.
+- Make it easier to write high quality code
+- Both reasonably comparable performance wise to C and C++
+- Cost is mainly learning curve and memory
+  - Computers have never been faster and memory has never been cheaper
+
+
+## Threat Modeling 
+
+<div class="footnote">
+1. <a href="https://github.com/iriusrisk/OpenThreatModel">OpenThreatModel on GitHub</a><br />
+2. <a href="https://owasp.org/www-community/Threat_Modeling">Threat Modeling on OWASP</a>
+</div>
+
+Threat Modeling is **crucial**
+- *Work with experienced security personel*
+- Who uses the software? How?
+- What assets are involved? How are they protected?
+- Identify mitigations and implement them
+
+Your threat model is a living document
+
+Consider publishing it
+
+<aside class="notes">
+- There are lots of frameworks and resources out there.<br />
+- Memory corruption is a significant threat against "unsafe" code!<br />
+- "trust" is not a mitigation!!<br />
+- What's the worst thing that could happen?
+</aside>
+
+
+## Implementation Phase
+
+While constructing, be diligent and seek to learn.
+
+1. Create and adhere to coding guidelines / standards
+2. Conduct code reviews with qualified colleages
+3. Pay close attention to compiler warnings
+4. Use any and all static analysis tools
+
+
+## Testing
+
+**USE SANITIZERS**: Address, Thread, UB
+
+Write lots of tests
+- Unit tests, Integration tests
+- **Leverage fuzz testing!**
+
+Test your code changes yourself
+- Observe your software's behavior first hand
+- Who better to know if it's working correctly?
+
+<aside class="notes">
+Use saniitizers, but understand that their weakness is that they can only help if tests exercise the code.<br />
+<br />
+Believe it or not, there are developers out there that think testing is QA's job.
+</aside>
+
+
+## Verification
+
+Formal verification is a desirable property.
+ - Coq, Frama-C, CBMC, Kani (for Rust), etc
+
+But it's not a panacea either
+- Verifiers are software too
+
+
+## Other Things
+
+1. Periodically re-assessing security
+  - The environment changes, remember qmail?
+2. Invite review - open source / bug bounties / etc
+  - Marcel wrote about this in his paper, and I agree.
+  - This kind of adversarial relationship is virtuous.
+
+---
+
+<!-- .slide: class="ctitle" -->
+# Conclusions
+<div class="ctitle-line"></div>
+
+## What I hope you learned
+
+
+## General Takeways
+
+Transparency -- we need more
+- Who audited what -- Exactly??
+- This is currently tracked sometimes, but only indirectly (CVE credits etc)
+- what was tested? who tested it? what did they find?
+- what WASNT tested?
+- what is tested for every build?
+
+Required security classes
+* Maybe computer security history ?
+This would be a good one for engineers to need to take. It doesn't have to be at every university either. It can be a collaboration between multiple or one that gets accredited by professionals and other professors
+* Feed failures back into security testing pipeline
+
+Modern tools incorporate learnings from previous failures
+- This is **real** engineering
+
+
+## Takeaways for Management
+
+Invest in improving software quality
 
 Evidence shows that better quality leads to better efficiency (TODO: source)
 
 
-## SDLC
-
-Secure Development Life Cycle
-
-
-## formal verification tools
-
- - coq
- - frama-c
- - cbmc
- - kani
-
-
-## static analyzers
-
- - noisy much?
-
-
-## fuzzing
-
- - pretty good bang for the buck, but requires knowledge of the code
- - applicable to all programming languages
-
-
-## What else can we do?
-
-Computer security history class? How about that?
-This would be a good one for engineers to need to take. It doesn't have to be at every university either. It can be a collaboration between multiple or one that gets accredited by professionals and other professors
-
-
-# Memory Safety
-
-I recommend modern langauges unless absolutely necessary
-
-
-# Nah, Memory Safety Isn't for Us
-
-* Sanitizers - UB, Address, Thread, etc.
-* Extensive tests / Fuzz testing
-* Feed failures back into security testing pipeline
-
-
-# Call to Action
-
-Let's get scientific!
-
-Consider your projects as collections of experiments
-
-Document them using Hypothesis / Experiment Design / Notes / Results format
-
-Security assessment is specialized QA
-
-
-# Call to Action
+## Takeaways for Developers
 
 More configurable features flags
-
 Some call them "andon cords"
-
 All the big vendors have them, but we need more
-
 And we need to allow consumers to toggle them
-
-
-# More Transparency
-
-Who audited what -- Exactly??
-- This is currently tracked sometimes, but only indirectly (CVE credits etc)
-
-
-## Takeaways
-
-Transparency
 Disablement features / Andon Cords
-Security assessment is specialized QA
+
+
+## Takeaways for Security Practitioners
+
+Not enough people?
+  - Teach your skills!
+  - Take an apprentice!
+
+Let's get scientific!
+- Increase rigor, especially in security testing.
+- Document them using Hypothesis / Experiment Design / Notes / Results format
+- Consider your projects as collections of experiments
+
+
+## All the safety is not enough
+
+Bugs will still happen
+
+- Command injection, SQL injection, XSS, all the injections
+- Logic errors, crypto fails
+- Authentication missing or poorly implemented
+- ...and so on
+
+**Memory safety issues are reportedly 70% of the problems that Microsoft and Google encounter and fix.**
 
 
 ## Conclusion
 
 Developing secure software is hard work.
-Many businesses are not willing to invest the time and effort to produce robust software.
+
+Development orgs must take ownership and make wise decisisons.
+
 Modern tools and techniques can help to reduce the burden.
+
+Please take these concepts back to your development orgs and push for improvements.
+- Remember: Security is a process and a team sport.
+
+Go read Marcel's paper!!
 
 ---
 
