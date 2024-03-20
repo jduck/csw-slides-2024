@@ -636,11 +636,22 @@ Believe it or not, there are developers out there that think testing is QA's job
 
 ## Verification
 
+<div class="footnote">
+1. <a href="https://news.ycombinator.com/item?id=39191507">The C bounded model checker: criminally underused</a>
+</div>
+
 Formal verification is a desirable property.
  - Coq, Frama-C, CBMC, Kani (for Rust), etc
 
+Widely considered the ultimate in trust and guarantees
+
 But it's not a panacea either
 - Verifiers are software too
+
+<aside class="notes">
+The reference discusses CBMC's handling of uninitialized values and how that intersects with compiler optimizations.<br />
+This seems to be an area where CBMC falls down, potentially leading to false beliefs.
+</aside>
 
 
 ## Post-Deployment
