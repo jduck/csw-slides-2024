@@ -117,7 +117,7 @@ Microsoft had big security problems in early 2000's.
  - Windows was around 96% market share
  - Several worms attacking various bugs
  - Bill Gates took action
- - Led to many industry improvements, by following their lead
+ - Led the industry to many improvements
 
 
 ## RCE in Microsoft ATL
@@ -709,7 +709,7 @@ Evidence shows that better quality leads to better efficiency AND cost savings
 1. More configurable features flags
   - Allow users to toggle features
 2. Choose modern languages and tools/toolchains!
-3. Learn more about security issues
+3. Learn more about security issues (CWE)
 4. Test, test, fuzz test, use sanitizers.
 5. Talk to decision makers about prioritizing quality
 
@@ -723,13 +723,15 @@ Learn, test, and use modern stuff
 
 ## Takeaways for Security Practitioners
 
-Not enough people?
-  - Teach your skills! Take an apprentice!
+Teach your skills! Take an apprentice!
 
 Let's get scientific!
-- Increase rigor, especially in security testing.
-- Document them using Hypothesis / Experiment Design / Notes / Results format
 - Consider your projects as collections of experiments
+- Document them using Hypothesis / Experiment Design / Notes / Results format
+- Increase rigor, especially in security testing.
+
+Learn more about development
+- Don't be afraid to contribute code
 
 
 ## All the safety is not enough
