@@ -166,7 +166,8 @@ So one extra byte in a header file caused such a huge fallout?
 <aside class="notes">
 I went on learning about different types of bugs and bug classes.<br />
 I learned to write exploits as a challenge to myself.<br />
-Eventually I learned what appeared to be the cause for all this trouble -- undefined behavior.
+Eventually I learned what appeared to be the cause for all this trouble -- undefined behavior.<br />
+IMHO, this is the ultimate technical debt in software development.
 </aside>
 
 
@@ -203,9 +204,13 @@ Problems:
 - Government fails
 - Software vendor fails
 
+Potential solutions coming later in the talk
+
 
 ## People Problems
 
+- Perceived staffing crisis
+  - Not enough qualified practioners
 - Insufficient developer and security education
   - Many developers don't know security
   - Many security people don't know development
@@ -219,13 +224,12 @@ Open your minds and seek to learn!
 
 <div class="footnote">NOTE: We should celebrate exceptions and seek to learn from them.</div>
 
-- Security products shipping with security bugs
+- Security products shipping with trivial security bugs
 - Lack of scientific approach / rigor
   - Tons of private reporting and silent fixes
-- Assessments time-boxed and point-in-time
+  - Assessments time-boxed and point-in-time
   - Review scope is too large to deliver quality
 - Unwilling to jump in to fix the code
-- Not enough qualified practioners
 
 I bet you can think of other things too!
 
@@ -236,14 +240,16 @@ I bet you can think of other things too!
 
 ## Government Fails
 
-Lack of regulation on the software industry has led to forseeable failure.
+Lack of regulation on the software industry has led to forseeable failures.
 
-Participation in zero-day markets removes many talented persons from the pool
+Zero-day markets removes many talented persons from the pool
 of qualified security practitioners.
 
 <aside class="notes">
 Whether you know it or not, the US (and other) governments fund vulnerability research.<br />
-This takes talented resources away from the pool of potential security industry practioners.
+This takes talented resources away from the pool of potential security industry practioners.<br />
+When I left Amazon, I had 6 different VR firms reach out to me.<br />
+Only one non-VR firm reached out.
 </aside>
 
 
@@ -262,7 +268,8 @@ This takes talented resources away from the pool of potential security industry 
   - Fuzz much??
 
 <aside class="notes">
-Is releasing a poor quality product really in your company's best interest?
+Is releasing a poor quality product really in your company's best interest?<br />
+Surely there's more to complain about here, but I digress.
 </aside>
 
 ---
@@ -282,7 +289,7 @@ Is releasing a poor quality product really in your company's best interest?
 3. <a href="https://yoric.github.io/post/safety-and-security/">About Safety, Security and yes, C++ and Rust</a>
 </div>
 
-Many things to think about:
+People are getting serious about "safety" in coding.
 
 - Temporal safety
 - Spatial safety (bounds)
@@ -306,10 +313,14 @@ Governments turning Memory Safety into a MEME!
 Several papers and Federal Regsiter RFIs (and response comments on regulations.gov)
 
 * 2022 - NSA Paper on Memory Safety
-* 2023 - National Cybersecurity Strategy
-* 2024 - Secure by Design (CISA + 13 other countries)
+* 2023 - National Cybersecurity Strategy + RFI
+* 2023 - Secure by Design (CISA + 13 other countries)
 * 2024 - Back to the Building Blocks (ONCD) [[LINK](https://www.whitehouse.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf)]
-  * Results from 2023 CFI
+  * Results from 2023 RFI
+
+<aside class="notes">
+Secure by Design presented at BlackHat USA 2023, then paper published early this year.
+</aside>
 
 
 ## Industry Activity
@@ -391,7 +402,12 @@ Maybe C++26?
 * Bjarne Stroustrup - C++ Safety Profiles etc
 * Herb Sutter - cppfront, ISO C++ Chair, blogging
 * Sean Baxter ([@seanbax](https://twitter.com/seanbax)) - "Memory-safe C++"
-  - Engage with him on X/Twitter
+
+<aside class="notes">
+I recommend following Sean on Twitter. He's doing really good work.<br />
+Bjarne is mostly just defending his baby when given the chance. He means well.<br />
+Herb is also doing work too, but not like Sean
+</aside>
 
 
 ## Defining Undefined Behavior
@@ -407,7 +423,7 @@ Shafik Yaghmour (Intel) is working to drive change around "undefined behavior".
 
 I emailed him with encouragement, but no response :-/
 
-IDEA: Maybe we should attempt to define the behavior based on empirical observations?
+&#x1f4a1; Document behavior in the spec based on empirical observations
 
 
 ## Other Interesting Stuff - Fil-C
@@ -536,9 +552,30 @@ I use and recommend modern langauges
 Ideal languages for the modern world.
 - Benefit from decades of learning about software construction.
 - Make it easier to write high quality code
-- Both reasonably comparable performance wise to C and C++
+- Comparable performance to C and C++
 - Cost is mainly learning curve and memory
   - Computers have never been faster and memory has never been cheaper
+
+
+# Obligatory Rust Slide
+
+Bias warning: I &#x2764;&#xfe0f; Rust
+
+- Safety focus
+- Fast & Efficient
+- Multi platform support
+- Ecosystem
+- **Empowering**
+
+But this is not a talk on Rust.
+
+<aside class="notes">
+Rust uses a "safe by default" paradigm.<br />
+"Unsafe" code must be explicitly annotated.<br />
+Prevents or lessens the impact of traditional coding problems<br />
+<br />
+Keep an eye out for a blog post where I'll explain my love for Rust further.<br />
+</aside>
 
 
 ## Threat Modeling 
@@ -568,21 +605,23 @@ Consider publishing it
 
 ## Implementation Phase
 
-While constructing, be diligent and seek to learn.
+While constructing, be diligent and keep learning.
 
-1. Create and adhere to coding guidelines / standards
-2. Conduct code reviews with qualified colleages
-3. Pay close attention to compiler warnings
-4. Use any and all static analysis tools
+1. Hopefully you picked a modern language
+2. Create and adhere to coding guidelines / standards
+3. Conduct code reviews with qualified colleages
+4. Pay close attention to compiler warnings
+5. Use any and all static analysis tools
 
 
 ## Testing
 
-**USE SANITIZERS**: Address, Thread, UB
-
 Write lots of tests
 - Unit tests, Integration tests
 - **Leverage fuzz testing!**
+
+**USE SANITIZERS**: Address, Thread, UB
+- Especially if you're using C or C++
 
 Test your code changes yourself
 - Observe your software's behavior first hand
@@ -604,13 +643,15 @@ But it's not a panacea either
 - Verifiers are software too
 
 
-## Other Things
+## Post-Deployment
 
 1. Periodically re-assessing security
   - The environment changes, remember qmail?
 2. Invite review - open source / bug bounties / etc
   - Marcel wrote about this in his paper, and I agree.
   - This kind of adversarial relationship is virtuous.
+
+Security is a process.
 
 ---
 
@@ -621,45 +662,69 @@ But it's not a panacea either
 ## What I hope you learned
 
 
-## General Takeways
+## General Takeways I
 
 Transparency -- we need more
-- Who audited what -- Exactly??
-- This is currently tracked sometimes, but only indirectly (CVE credits etc)
-- what was tested? who tested it? what did they find?
-- what WASNT tested?
-- what is tested for every build?
+- How is your team investing in security?
+- What is your software made of? (SBOM)
+- Who audited what?
+  - Tracked sometimes, but indirectly (ie. CVE credits)
+- What had little or no review?
+- What tests run in CI?
+
+
+## General Takeaways II
 
 Required security classes
-* Maybe computer security history ?
-This would be a good one for engineers to need to take. It doesn't have to be at every university either. It can be a collaboration between multiple or one that gets accredited by professionals and other professors
-* Feed failures back into security testing pipeline
+- &#x1f4a1; Computer security 101
+  - Core concepts
+  - History of attacks and defenses
+  - Modern best practices
 
 Modern tools incorporate learnings from previous failures
-- This is **real** engineering
+- Feed failures back into security testing pipeline
+
+<aside class="notes">
+This would be a good one for engineers to need to take.<br />
+</aside>
 
 
 ## Takeaways for Management
 
-Invest in improving software quality
+<div class="footnote">
+1. <a href="https://www.linkedin.com/pulse/top-reasons-why-businesses-should-invest-software-quality-8etde/">Top reasons why businesses should invest in software quality</a>
+</div>
 
-Evidence shows that better quality leads to better efficiency (TODO: source)
+Management must set direction appropriately
+
+1. Invest in improving software quality
+2. Security bugs are bugs
+  - Less bugs means less security bugs
+
+Evidence shows that better quality leads to better efficiency AND cost savings
 
 
 ## Takeaways for Developers
 
-More configurable features flags
-Some call them "andon cords"
-All the big vendors have them, but we need more
-And we need to allow consumers to toggle them
-Disablement features / Andon Cords
+1. More configurable features flags
+  - Allow users to toggle features
+2. Choose modern languages and tools/toolchains!
+3. Learn more about security issues
+4. Test, test, fuzz test, use sanitizers.
+5. Talk to decision makers about prioritizing quality
+
+<aside class="notes">
+Your features may not fit your users risk profile<br />
+For example, what features in Chrome are on by default and cannot be disabled??<br />
+<br />
+Learn, test, and use modern stuff
+</aside>
 
 
 ## Takeaways for Security Practitioners
 
 Not enough people?
-  - Teach your skills!
-  - Take an apprentice!
+  - Teach your skills! Take an apprentice!
 
 Let's get scientific!
 - Increase rigor, especially in security testing.
