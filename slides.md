@@ -328,7 +328,7 @@ Secure by Design presented at BlackHat USA 2023, then paper published early this
 Even before the recent federal push, several vendors are leading by example.
 
 * Google - Rust in Android, donated $1 mil
-* Rust at Microsoft - win23k
+* Rust at Microsoft - win32k
 * Apple investing in Swift in the kernel
 * Rust in the Linux Kernel
 
