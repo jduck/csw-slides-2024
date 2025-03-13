@@ -787,7 +787,7 @@ jduck @ Twitter/Discord/Mastadon/etc<br />
 
 # About these slides
 
-Slides were created in <a href="https://revealjs.com/markdown/">markdown with nreveal.js</a>
+Slides were created in <a href="https://revealjs.com/markdown/">markdown with reveal.js</a>
 
 You can export by printing the <a href="/?print-pdf">PDF</a>
 
